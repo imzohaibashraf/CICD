@@ -17,10 +17,10 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push Docker image
+      - name: docker build service1
         run: |
           docker build ./service1 -t imzohaib/service1:latest
-        run: |
+        name: docker build service2
           docker build ./service2 -t imzoaib/service2:latest
       - name: docker push
         run: |
