@@ -18,6 +18,6 @@ fi
 # Add deployment record to Google Sheet
 curl -X POST -H "Content-Type: application/json" -d '{
   "values": [
-    ["'$start_time'", "'$service_Name'", "'$completed_time'", "'$status'"]
+    ["'$start_time'", "Service Name", "'$completed_time'", "'$status'"]
   ]
-}' "https://sheets.googleapis.com/v4/spreadsheets/1bJ0l3JYxCvQla_sS8mJsYawJNNcPa-P_SAMh5_Q3qPg/values/A2:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS&access_token=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"
+}' "https://sheets.googleapis.com/v4/spreadsheets/<spreadsheet-id>/values/A2:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS&access_token=<access-token>"
