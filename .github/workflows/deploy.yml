@@ -26,4 +26,6 @@ jobs:
         run: |
           docker push imzohaib/service1:latest
           docker push imzohaib/service2:latest
+      - name: Deploy serivces
+        run: docker-compose -f docker-compose.yml up -d
 
