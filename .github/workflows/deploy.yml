@@ -21,6 +21,7 @@ jobs:
         run: |
           docker build ./service1 -t imzohaib/service1:latest
       - name: docker build service2
+        run: |
           docker build ./service2 -t imzoaib/service2:latest
       - name: docker push
         run: |
