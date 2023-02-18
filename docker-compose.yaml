@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  service1:
+    build:
+      context: ./service1
+    image: imzohaib/service1
+    restart: always
+    ports:
+      - "8080:8080"
+
+  service2:
+    build:
+      context: ./service2
+    image: imzohaib/service2
+    restart: always
+    ports:
+      - "8081:8081"
