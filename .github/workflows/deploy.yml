@@ -18,16 +18,12 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: ./service1
-          push: true
-          tags: imzohaib/${{ github.repository }}:latest
+        run: |
+          docker build ./service1 -t imzohaib/service1:latest
+        run: |
+          docker build ./service2 -t imzoaib/service2:latest
+      - name: docker push
+        run: |
+          docker push imzohaib/service1:latest
+          docker push imzohaib/service2:latest
 
-      - name: Notify deployment repository
-        uses: wei/git-push@v1
-        with:
-          directory: ../deployment-repository
-          repository: deployment-repository
-          branch: main
-          commit_message: "Update deployment"
